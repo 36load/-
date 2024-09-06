@@ -26,6 +26,7 @@ if '%errorlevel%' NEQ '0' (
 
 :: Define file paths
 Del "C:\Windows\Temp\currentSerials.txt"
+mkdir "C:\Windows\Temp"
 set "outputFile=C:\Windows\Temp\currentSerials.txt"
 set "savedFile=C:\Windows\savedSerials.txt"
 
