@@ -39,3 +39,4 @@ wmic diskdrive get serialnumber > "%savedFile%"
 wmic diskdrive get serialnumber > "%outputFile%"
 
 endlocal
+exit
