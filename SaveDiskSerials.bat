@@ -38,5 +38,4 @@ wmic diskdrive get serialnumber > "%savedFile%"
 :: Use WMIC to get disk serial numbers and append to the file
 wmic diskdrive get serialnumber > "%outputFile%"
 
-endlocal
 exit
