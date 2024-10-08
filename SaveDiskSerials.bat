@@ -1,5 +1,4 @@
 @echo off
-StartLocal
 
 :: BatchGotAdmin
 :-------------------------------------
@@ -26,7 +25,7 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :--------------------------------------
-
+powershell reset-physicaldisk *
 :: Define file paths
 Del "C:\Windows\Temp\currentSerials.txt"
 mkdir "C:\Windows\Temp"
@@ -41,5 +40,4 @@ wmic diskdrive get serialnumber > "%savedFile%"
 :: Use WMIC to get disk serial numbers and append to the file
 wmic diskdrive get serialnumber > "%outputFile%"
 
-endlocal
 exit
