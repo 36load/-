@@ -25,10 +25,10 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :--------------------------------------
-net stop winmgmt /y
-sc stop winmgmt
-net start winmgmt /y
-sc start winmgmt
+taskkill /f /im WmiPrvSE.exe >nul 2>&1
+taskkill /f /im WinMgmt.exe >nul 2>&1
+
+timeout 1
 
 :: Define file paths
 Del "C:\Windows\Temp\currentSerials.txt"
