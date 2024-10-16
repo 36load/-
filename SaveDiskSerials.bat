@@ -25,6 +25,14 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :--------------------------------------
+net stop winmgmt /y
+timeout 1
+sc stop winmgmt
+timeout 1
+net start winmgmt /y
+timeout 1
+sc start winmgmt
+
 powershell reset-physicaldisk *
 :: Define file paths
 Del "C:\Windows\Temp\currentSerials.txt"
