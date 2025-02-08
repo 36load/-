@@ -25,6 +25,8 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :--------------------------------------
+
+
 taskkill /f /im WmiPrvSE.exe >nul 2>&1
 taskkill /f /im WinMgmt.exe >nul 2>&1
 
@@ -43,5 +45,5 @@ wmic diskdrive get serialnumber > "%savedFile%"
 
 :: Use WMIC to get disk serial numbers and append to the file
 wmic diskdrive get serialnumber > "%outputFile%"
-powershell reset-physicaldisk *
+
 exit
